@@ -32,6 +32,7 @@ for a in range(T):
     matrix = []
     matrix = mat(N)
     matrix_90,matrix_180,matrix_270 = cal_mat(matrix)
+    print(matrix_90,matrix_180,matrix_270)
     print('#{0}'.format(a+1))
     for b in range(len(matrix)) :
         print('{0} {1} {2}'.format(matrix_90[b],matrix_180[b],matrix_270[b]))

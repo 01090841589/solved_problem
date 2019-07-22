@@ -4,7 +4,7 @@ def squrt_num(num):
             break
     min = i-1
     max = i
-    for i in range(1,21):
+    while (abs(((max+min)/2)**2-num) > 0.0000001):
         if ((max+min)/2)**2 > num :
             max = (max+min)/2
         else :
