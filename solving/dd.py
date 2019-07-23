@@ -1,4 +1,5 @@
-import requests
-url = "https://api.bithumb.com/public/ticker/btc"
-data = requests.get(url).json()['data']
-print(data)
+word = input()
+sortword = sorted(list(map(str, word)))
+print(sortword)
+word = ''.join(sortword)
+print(word)
