@@ -1,47 +1,55 @@
-tunnal = [[[-1, 0], [1, 0], [0,-1], [0, 1]], [[-1, 0], [1, 0]], [[0, -1], [0, 1]], [[-1, 0], [0, 1]], [[1, 0], [0, 1]], [[1, 0], [0, -1]], [[-1, 0], [0, -1]]]
-NMRCL = list(map(int,input().split()))
-N = NMRCL[0]
-M = NMRCL[1]
-R = NMRCL[2]
-C = NMRCL[3]
-L = NMRCL[4]
-tunnal_map = []
-x_map = [0 for a in range(M)]
-tunnal_map = [x_map[:] for a in range(N)]
-pipe = []
-for pip in range(N):
-    pipe.append(list(map(int,input().split())))
-move = [R, C]
-running = []
-tunnal_map[move[0]][move[1]] = 1
+# T = int(input())
+# for test_case in range(1,T+1):
+dmty = list(map(int,input().split()))
+day = dmty[0]
+month = dmty[1]
+three_month = dmty[2]
+year = dmty[3]
+fee = list(map(int,input().split()))
+pay = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+pay_month = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+top_dis = 0
+for i in range(len(fee)):
+    if fee[i] > 0:
+        if day * fee[i] > month:
+            pay[i] = month
+        else:
+            pay[i] = day * fee[i]
 
-for arrow in tunnal[pipe[move[0]][move[1]] - 1]:
-    runn = move[:]
-    runn[0] += arrow[0]
-    runn[1] += arrow[1]
-    if 0 <= runn[0] < N and 0 <= runn[1] < M:
-        if pipe[runn[0]][runn[1]] != 0:
-            if [move[0] - runn[0], move[1] - runn[1]] in tunnal[pipe[runn[0]][runn[1]] - 1]:
-                running.append([runn[0], runn[1]])
-                tunnal_map[runn[0]][runn[1]] = 1
-    del runn
-for go in range(2,L):
-    move = running[:]
-    running = []
-    for mov in move:
-        for arrow in tunnal[pipe[mov[0]][mov[1]]-1]:
-            runn = mov[:]
-            runn[0] += arrow[0]
-            runn[1] += arrow[1]
-            if 0 <= runn[0] < N and 0 <= runn[1] < M:
-                if pipe[runn[0]][runn[1]] != 0:
-                    if [mov[0] - runn[0], mov[1] - runn[1]] in tunnal[pipe[runn[0]][runn[1]] - 1]:
-                        running.append([runn[0],runn[1]])
-                        tunnal_map[runn[0]][runn[1]] = 1
-    for a in range(N):
-        print(tunnal_map[a],pipe[a])
-    print()
-total = 0
-for k in range(len(tunnal_map)):
-    total += tunnal_map[k].count(1)
-print('#{0}'.format(total))
+for j in range(len(fee)-2):
+    if pay[j]+pay[j+1]+pay[j+2] > three_month:
+        pay_month[j] = three_month - (pay[j]+pay[j+1]+pay[j+2])
+if pay[10]+pay[11] > three_month:
+    pay_month[10] = three_month - (pay[10]-pay[11])
+if pay[11] > three_month:
+    pay_month[11] = three_month - pay[11]
+print(sum(pay),pay_month)
+while sum(pay_month) < 0:
+    min_month = []
+    min_fee = 0
+    for a in range(len(pay_month)):
+        if pay_month[a] == min(pay_month):
+            min_month.append(a)
+        dis = [0,0]
+    for a in min_month :
+        if a > 0:
+            min_fee += pay_month[a-1]
+        if a > 1:
+            min_fee += pay_month[a-2]
+        if a < 10:
+            min_fee += pay_month[a+2]
+        if a < 11:
+            min_fee += pay_month[a+1]
+        if dis[0] == 0:
+            dis = [min_fee, a]
+        if dis[0] < min_fee:
+            dis = [min_fee, a]
+    top_dis += pay_month[dis[1]]
+    for del_mon in range(dis[1]-2, dis[1]+3):
+        if 0 <= del_mon < 12:
+            pay_month[del_mon] = 0
+total = sum(pay)+top_dis
+if total > year:
+    total = year
+print(total)
+    # print('#{0} {1}'.format(test_case,total))

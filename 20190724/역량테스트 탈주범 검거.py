@@ -1,0 +1,43 @@
+tunnal = [[[-1, 0], [1, 0], [0,-1], [0, 1]], [[-1, 0], [1, 0]], [[0, -1], [0, 1]], [[-1, 0], [0, 1]], [[1, 0], [0, 1]], [[1, 0], [0, -1]], [[-1, 0], [0, -1]]]
+T = int(input())
+for test_case in range(1,T+1):
+    NMRCL = list(map(int, input().split()))
+    N = NMRCL[0]
+    M = NMRCL[1]
+    R = NMRCL[2]
+    C = NMRCL[3]
+    L = NMRCL[4]
+    tunnal_map = []
+    x_map = [0 for a in range(M)]
+    tunnal_map = [x_map[:] for a in range(N)]
+    pipe = []
+    for pip in range(N):
+        pipe.append(list(map(int, input().split())))
+    move = [R, C]
+    running = []
+    tunnal_map[move[0]][move[1]] = 1
+
+    for arrow in tunnal[pipe[move[0]][move[1]] - 1]:
+        if 0 <= (move[0] + arrow[0]) < N and 0 <= (move[1] + arrow[1]) < M:
+            if pipe[move[0] + arrow[0]][move[1] + arrow[1]] != 0:
+                if [-arrow[0], -arrow[1]] in tunnal[pipe[move[0] + arrow[0]][move[1] + arrow[1]] - 1]:
+                    running.append([move[0] + arrow[0], move[1] + arrow[1]])
+                    tunnal_map[move[0] + arrow[0]][move[1] + arrow[1]] = 1
+    for go in range(2, L):
+        move = running
+        running = []
+        for mov in move:
+            for arrow in tunnal[pipe[mov[0]][mov[1]] - 1]:
+                if 0 <= (mov[0] + arrow[0]) < N and 0 <= (mov[1] + arrow[1]) < M:
+                    if pipe[mov[0] + arrow[0]][mov[1] + arrow[1]] != 0:
+                        if [-arrow[0], -arrow[1]] in tunnal[pipe[mov[0] + arrow[0]][mov[1] + arrow[1]] - 1]:
+                            if [mov[0] + arrow[0], mov[1] + arrow[1]] not in running:
+                                running.append([mov[0] + arrow[0], mov[1] + arrow[1]])
+
+                            tunnal_map[mov[0] + arrow[0]][mov[1] + arrow[1]] = 1
+    total = 0
+    for k in range(len(tunnal_map)):
+        total += tunnal_map[k].count(1)
+    if L == 1:
+        total = 1
+    print('#{0} {1}'.format(test_case,total))
