@@ -1,12 +1,13 @@
+import math
 def prime(num):
-    for i in range(2, num):
+    for i in range(3, int(math.sqrt(num))+1):
         if num % i == 0:
            return False
     return True
 
-sosu = []
-
-for a in range(2,100000):
+sosu = [2]
+for a in range(3,1000000, 2):
     if prime(a):
         sosu.append(a)
-print(sosu)
+for num in sosu:
+    print(num,end=' ')

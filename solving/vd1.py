@@ -1,6 +1,18 @@
+N = [1, 2, 3]
 
-number = '9087654321'
-for i in range(1000):
-    if str(i) not in number:
-        print(i)
-        break
+right = []
+left = []
+
+def out(i, N):
+    if sum(right) + i < sum(left):
+        print('right')
+    if sum(right) < sum(left)+i:
+        left.append(i)
+        N.remove(i)
+        return N
+
+M = N[:]
+
+for i in N:
+    out(i, M)
+    print(M)

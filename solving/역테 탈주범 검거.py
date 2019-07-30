@@ -13,15 +13,9 @@ for test_case in range(1,T+1):
     pipe = []
     for pip in range(N):
         pipe.append(list(map(int,input().split())))
-    # for a in range(N):
-    #     print(tunnal_map[a],pipe[a])
-    # print()
     move = [R, C]
     running = []
     tunnal_map[move[0]][move[1]] = 1
-    # for a in range(N):
-    #     print(tunnal_map[a],pipe[a])
-    # print()
 
     for arrow in tunnal[pipe[move[0]][move[1]]-1]:
         runn = move[:]
@@ -32,9 +26,6 @@ for test_case in range(1,T+1):
                 if [move[0]-runn[0],move[1]-runn[1]] in tunnal[pipe[runn[0]][runn[1]] - 1]:
                     running.append([runn[0],runn[1]])
                     tunnal_map[runn[0]][runn[1]] = 1
-    # for a in range(N):
-    #     print(tunnal_map[a],pipe[a])
-    # print()
     for go in range(2,L):
         move = running[:]
         running = []
@@ -48,9 +39,6 @@ for test_case in range(1,T+1):
                         if [mov[0] - runn[0], mov[1] - runn[1]] in tunnal[pipe[runn[0]][runn[1]] - 1]:
                             running.append([runn[0],runn[1]])
                             tunnal_map[runn[0]][runn[1]] = 1
-        # for a in range(N):
-        #     print(tunnal_map[a],pipe[a])
-        # print()
     total = 0
     for k in range(len(tunnal_map)):
         total += tunnal_map[k].count(1)
