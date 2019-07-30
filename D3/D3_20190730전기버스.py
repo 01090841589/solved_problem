@@ -1,7 +1,7 @@
-T =
+T = int(input())
 for test_case in range(1, T+1):
-    KNM = [1, 10, 9]
-    M = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    KNM = list(map(int, input().strip().split(' ')))
+    M = list(map(int, input().strip().split(' ')))
     locate = 0
     cnt = 0
     M.append(KNM[1])
