@@ -37,15 +37,11 @@ for test_case in range(1,11):
                 elif cnt == 2:
                     print('#{0} 1'.format(test_case))
                     break
-                # print(route_result)
             if cnt == 2:
                 break
-            # for i in range(len(maze)):
-            #     print(maze[i])
         if cnt == 2:
             break
         if len(route_result) == 0:
-            # print(dup_route)
             cnt = 3
             print('#{0} 0'.format(test_case))
             break
