@@ -17,16 +17,16 @@ def multiple(y, x, c):
             mat[Y][X] = c+10
 def spread():
     up, down, left, right = 0, 0, 0, 0
-    for i in range(len(mat)):
-        for j in range(len(mat[0])):
-            if mat[i][j] != 0:
-                if i == 0:
+    for Ai in range(len(mat)):
+        for Aj in range(len(mat[0])):
+            if mat[Ai][Aj] != 0:
+                if Ai == 0:
                     up = 1
-                if j == 0:
+                if Aj == 0:
                     left = 1
-                if i == len(mat)-1:
+                if Ai == len(mat)-1:
                     down = 1
-                if j == len(mat[0])-1:
+                if Aj == len(mat[0])-1:
                     right = 1
     if up == 1:
         new_up()
@@ -37,7 +37,7 @@ def spread():
     if right == 1:
         new_right()
 
-T  = int(input())
+T = int(input())
 for test_case in range(1, T+1):
     NMK = list(map(int,input().split()))
     mat = []
@@ -51,14 +51,20 @@ for test_case in range(1, T+1):
                     for j in range(len(mat[0])):
                         if mat[i][j] == AA:
                             multiple(i, j, AA)
-                            mat[i][j] = -AA
+                            mat[i][j] = -AA-1
                 for i in range(len(mat)):
                     for j in range(len(mat[0])):
                         if mat[i][j] > 10:
                             mat[i][j] -= 10
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                if mat[i][j] < -1:
+                    mat[i][j] += 1
         cnt = 0
         for i in range(len(mat)):
             for j in range(len(mat[0])):
                 if mat[i][j] > 0:
                     cnt += 1
-    print('#{0} {1}'.format(test_case, cnt))
+                elif mat[i][j] < -1:
+                    cnt += 1
+    print('#{0} {1}'.format(test_case,cnt))
