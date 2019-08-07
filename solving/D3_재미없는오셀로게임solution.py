@@ -1,7 +1,5 @@
 DIR = ((1, 0), (-1, 0), (0, -1), (0, 1), (1, 1), (-1, -1), (1, -1), (-1, 1))
 black_white = [1, 2]
-
-
 def check(y, x, c, i):
     global n
     cnt = 0
@@ -37,10 +35,8 @@ for t in range(int(input())):
         y = y - 1
         x = x - 1
         board[y][x] = c
-        for j in range(8):
-            check(y, x, c, j)
-        for a in range(n):
-            print(board[a])
+        for arr in range(8):
+            check(y, x, c, arr)
     num_w = num_b = 0
     for i in board:
         num_b += i.count(1)

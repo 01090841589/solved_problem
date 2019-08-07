@@ -1,17 +1,13 @@
-T = int(input())
-for test_case in range(1, T+1):
-    NX = list(map(int,input().split()))
-    mat = []
-    for AA in range(NX[0]):
-        mat.append(list(map(int,input().split())))
 
-    def corr(lst):
-        temp = 0
-        fail = 0
-        for i,j in enumerate(lst):
-            if i == 0:
-                temp = j
-            elif temp > j :
+
+def corr(lst):
+    temp = 0
+    fail = 0
+    for i,j in enumerate(lst):
+        if i == 0:
+            temp = j
+        elif temp > j :
+            if temp-j == 1:
                 temp = j
                 k = i-1
                 for a in range(NX[1]):
@@ -23,16 +19,25 @@ for test_case in range(1, T+1):
                             fail = 1
                     else:
                         fail = 1
-            elif temp < j:
-                temp = j
-        return fail
-    def forwbackw(lst):
-        fai = 0
-        fai += corr(lst)
-        lst.reverse()
-        AA.reverse()
-        fai += corr(lst)
-        return fai
+            else:
+                fail = 1
+        elif temp < j:
+            temp = j
+    return fail
+def forwbackw(lst):
+    fai = 0
+    fai += corr(lst)
+    lst.reverse()
+    AA.reverse()
+    fai += corr(lst)
+    return fai
+
+T = int(input())
+for test_case in range(1, T+1):
+    NX = list(map(int,input().split()))
+    mat = []
+    for AA in range(NX[0]):
+        mat.append(list(map(int,input().split())))
     total = 0
     for Xsis in mat:
         AA = [0]*NX[0]
@@ -46,4 +51,3 @@ for test_case in range(1, T+1):
         if forwbackw(Ysis) == 0:
             total += 1
     print('#{0} {1}'.format(test_case,total))
-# 20190605 연속해서
