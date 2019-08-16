@@ -1,18 +1,25 @@
-N = [1, 2, 3]
+T = int(input())
+for test_case in range(T):
 
-right = []
-left = []
+    n, m = map(int, input().split())
+    list_line = []
+    for i in range(n + 1):
+        list_line += [[]].copy()
+    for i in range(m):
+        a, b = map(int, input().split())
+        if a > b:
+            list_line[b].append(a)
+        else:
+            list_line[a].append(b)
 
-def out(i, N):
-    if sum(right) + i < sum(left):
-        print('right')
-    if sum(right) < sum(left)+i:
-        left.append(i)
-        N.remove(i)
-        return N
+    count_num = 0
 
-M = N[:]
+    for i in range(1, n + 1):
+        for j in range(i + 1, n + 1):
+            if j in list_line[i]:
+                for k in range(j + 1, n + 1):
+                    if k in list_line[i]:
+                        if k in list_line[j]:
+                            count_num += 1
 
-for i in N:
-    out(i, M)
-    print(M)
+    print('#{} {}'.format(test_case + 1, count_num))

@@ -1,0 +1,1 @@
+[node.append([0]*V) for i in range(V)]
