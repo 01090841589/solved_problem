@@ -1,0 +1,28 @@
+3
+5 5 1
+#####
+#BR#B
+BGY#G
+PRG#G
+GGB#P
+U RG#GG
+3 7 4
+YBRBB#R
+GRBPB#G
+RGRBG#B
+R
+U BGGRP#P
+R
+D
+10 10 1
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+RDYPBRDYPB
+BRDYPBRDYP
+D
