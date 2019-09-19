@@ -3,9 +3,6 @@ sys.stdin = open("병합정렬.txt")
 
 def divv(N):
     global result
-    # if len(N) <=1:
-    #     stack.append(N)
-    #     return
     if len(N) == 3:
         stack.extend([N[:len(N)//2], N[len(N)//2:]])
         return
