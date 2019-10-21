@@ -1,0 +1,5 @@
+4
+knuth morris pratt
+recurrent neural network
+advanced encryption standard
+add add add
