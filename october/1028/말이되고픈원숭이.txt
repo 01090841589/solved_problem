@@ -6,3 +6,8 @@
 0 0 1 1 1 0
 0 0 1 0 1 1
 0 0 1 1 1 0
+push 1
+n = int(input())
+A = [input().split() for _ in range(n)]
+for 16
+[push,1]

@@ -24,60 +24,58 @@ def delete(y, x, k):
                 queue.append([Y, X, k])
 
 
-T = int(input())
-for tc in range(1, T+1):
-    N, M, K = map(int, input().split())
-    MAP = [list(map(int, input().split())) for _ in range(N)]
-    order = [list(map(int, input().split())) for _ in range(K)]
+N, M, K = map(int, input().split())
+MAP = [list(map(int, input().split())) for _ in range(N)]
+order = [list(map(int, input().split())) for _ in range(K)]
 
+# [print(MAP[i]) for i in range(N)]
+# print()
+
+for c in order:
+    if c[1]:
+        a = c[0]
+        while a <= N:
+            for i in range(c[2]):
+                MAP[a-1].append(MAP[a-1].pop(0))
+            a += c[0]
+    else:
+        a = c[0]
+        while a <= N:
+            for i in range(c[2]):
+                MAP[a-1].insert(0, (MAP[a-1].pop()))
+            a += c[0]
     # [print(MAP[i]) for i in range(N)]
     # print()
 
-    for c in order:
-        if c[1]:
-            a = c[0]
-            while a <= N:
-                for i in range(c[2]):
-                    MAP[a-1].append(MAP[a-1].pop(0))
-                a += c[0]
-        else:
-            a = c[0]
-            while a <= N:
-                for i in range(c[2]):
-                    MAP[a-1].insert(0, (MAP[a-1].pop()))
-                a += c[0]
-        # [print(MAP[i]) for i in range(N)]
-        # print()
+    flag = 1
+    for y in range(N):
+        for x in range(M):
+            if MAP[y][x] > 0:
+                delete(y, x, MAP[y][x])
 
-        flag = 1
+    if flag:
+        cnt = 0
+        scr = 0
         for y in range(N):
             for x in range(M):
                 if MAP[y][x] > 0:
-                    delete(y, x, MAP[y][x])
+                    cnt += 1
+                    scr += MAP[y][x]
+        if cnt == 0:
+            break
+        scr = scr / cnt
+        for y in range(N):
+            for x in range(M):
+                if 0 < MAP[y][x] < scr:
+                    MAP[y][x] += 1
+                elif MAP[y][x] > scr:
+                    MAP[y][x] -= 1
 
-        if flag:
-            cnt = 0
-            scr = 0
-            for y in range(N):
-                for x in range(M):
-                    if MAP[y][x] > 0:
-                        cnt += 1
-                        scr += MAP[y][x]
-            if cnt == 0:
-                break
-            scr = scr // cnt
-            for y in range(N):
-                for x in range(M):
-                    if 0 < MAP[y][x] < scr:
-                        MAP[y][x] += 1
-                    elif MAP[y][x] > scr:
-                        MAP[y][x] -= 1
-
-        # [print(MAP[i]) for i in range(N)]
-        # print()
-    result = 0
-    for y in range(N):
-        for x in range(M):
-            if 0 < MAP[y][x]:
-                result += MAP[y][x]
-    print('#{} {}'.format(tc, result))
+    # [print(MAP[i]) for i in range(N)]
+    # print()
+result = 0
+for y in range(N):
+    for x in range(M):
+        if 0 < MAP[y][x]:
+            result += MAP[y][x]
+print('{}'.format(result))
