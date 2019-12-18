@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 15 for Windows Desktop
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "언어의장벽", "언어의장벽\언어의장벽.vcxproj", "{43700201-6A60-4477-8493-B8CF7A13F075}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Debug|x64.ActiveCfg = Debug|x64
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Debug|x64.Build.0 = Debug|x64
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Debug|x86.ActiveCfg = Debug|Win32
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Debug|x86.Build.0 = Debug|Win32
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Release|x64.ActiveCfg = Release|x64
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Release|x64.Build.0 = Release|x64
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Release|x86.ActiveCfg = Release|Win32
+		{43700201-6A60-4477-8493-B8CF7A13F075}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF800A45-4D05-4CAC-9075-16F0D01D5235}
+	EndGlobalSection
+EndGlobal

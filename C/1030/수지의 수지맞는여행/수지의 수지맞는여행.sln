@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 15 for Windows Desktop
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "수지의 수지맞는여행", "수지의 수지맞는여행\수지의 수지맞는여행.vcxproj", "{502648EB-5952-4168-805D-6E92B0B895AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Debug|x64.ActiveCfg = Debug|x64
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Debug|x64.Build.0 = Debug|x64
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Debug|x86.Build.0 = Debug|Win32
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Release|x64.ActiveCfg = Release|x64
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Release|x64.Build.0 = Release|x64
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Release|x86.ActiveCfg = Release|Win32
+		{502648EB-5952-4168-805D-6E92B0B895AD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19E14844-7223-4C6A-83E2-7E4197EE14D2}
+	EndGlobalSection
+EndGlobal
