@@ -56,8 +56,8 @@ int main() {
 
 	return 0;
 }
-//
-///////////  Indexed Tree /////////
+
+/////////  Indexed Tree /////////
 //#include <stdio.h>
 //
 //int B;
