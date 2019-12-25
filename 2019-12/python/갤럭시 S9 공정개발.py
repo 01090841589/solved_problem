@@ -19,8 +19,8 @@ def filesum(size, files) -> int:
     return answer[0][size]
 
 
-test_case = int(input())
-for _ in range(test_case):
+tc = int(input())
+for _ in range(tc):
     k, files = int(input()), list(map(int, input().split()))
     INF = k*10000
     if k == 1:
