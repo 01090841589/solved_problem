@@ -10,4 +10,3 @@ print(MAP, dron)
 for _ in range(K):
     for i in range(4):
 
-        
