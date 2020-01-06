@@ -16,13 +16,13 @@ for num in range(1, N+1):
         break
     visited = [0]*(N+1)
     visited[num] = 1
-    queue = deque([num])
-    while queue:
-        now = queue.popleft()
+    que = deque([num])
+    while que:
+        now = que.popleft()
         for i in range(1, N+1):
             if MAP[now][i] and visited[i] == 0:
                 visited[i] = visited[now]+1
-                queue.append(i)
+                que.append(i)
     for i in range(1, N+1):
         if visited[i] == 0 or visited[i] > 7:
             res = 1
