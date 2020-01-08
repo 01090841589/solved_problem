@@ -1,0 +1,18 @@
+5 10
+aaaaaa
+aaaaa
+aaaaaaa
+aaaaaa
+aaaaaaa
+1 a
+1 a
+2 a
+2 a
+1 b
+1 c
+1 n
+2 b
+1 s
+2 c
+2 s
+2 n
