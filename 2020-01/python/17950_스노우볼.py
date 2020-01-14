@@ -1,7 +1,6 @@
 import sys
 sys.stdin = open("스노우볼.txt")
 
-
 H, x = map(int, input().split())
 balls = []
 for i in range(H):

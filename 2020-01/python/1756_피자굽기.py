@@ -1,5 +1,6 @@
 import sys
 sys.stdin = open("피자굽기.txt")
+
 D, N = map(int, input().split())
 oven = list(map(int, input().split()))
 pizza = list(map(int, input().split()))
