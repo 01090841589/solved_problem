@@ -15,5 +15,6 @@ public class helloworld {
 		System.out.print(nameList[0][0]);
 		System.out.print(nameList[0][0]);
 		System.out.println(nameList[0][0]);
+//		System.out.println(dummyUser.get("email")); ¹®ÀÚ
 	}
 }
