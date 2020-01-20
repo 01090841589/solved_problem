@@ -9,7 +9,6 @@ MAP = [list(input()) for _ in range(N)]
 visited = [[0]*M for _ in range(N)]
 que = deque()
 res = N*M
-# print(MAP)
 for i in range(N):
     for j in range(M):
         if MAP[i][j] == 'S':
@@ -21,7 +20,6 @@ for i in range(N):
         if MAP[i][j] == '*':
             que.append([i, j, 1, 1])
             visited[i][j] = 1
-        # elif MAP[i][j] == "S":
 
 while que:
     y, x, scr, k = que.popleft()
