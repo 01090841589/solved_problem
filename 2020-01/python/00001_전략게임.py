@@ -15,4 +15,4 @@ for tc in range(1, T+1):
     code = []
     q = deque([0, 0, [], 0])
     while q:
-        pass
+        y, x, code, k = q.popleft()
