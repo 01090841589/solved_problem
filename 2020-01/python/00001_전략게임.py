@@ -20,3 +20,4 @@ for tc in range(1, T+1):
             Y = y+c[0]
             X = x+c[1]
             if 0 <= Y < N and 0 <= X < N:
+                code.append(MAP[Y][X])
