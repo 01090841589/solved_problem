@@ -35,17 +35,17 @@ for tc in range(1, T+1):
             X = x+c[1]
             if 0 <= Y < N and 0 <= X < N:
                 check = ((code << 1)+MAP[Y][X])%16
-                if CodeActive[check] == 1 and step > 2:
+                if CodeActive[check] == 1 and step > 3:
                     check = MAP[0][0]
                     if k + 1 - bonus < visited[0][0][check]:
                         visited[0][0][check] = k + 1 - bonus
                         q.append([0, 0, check, k+1 - bonus, 0, 1])
-                elif CodeActive[check] == 2 and step > 2:
+                elif CodeActive[check] == 2 and step > 3:
                     check = 0
                     if k + 1 - bonus < visited[(N//2)-1][(N//2)-1][check]:
                         visited[(N // 2) - 1][(N // 2) - 1][check] = k + 1 - bonus
                         q.append([(N//2)-1, (N//2)-1, check, k+1 - bonus, 0, 0])
-                elif CodeActive[check] == 3 and step > 2:
+                elif CodeActive[check] == 3 and step > 3:
                     check = 0
                     if k + 1 - bonus < visited[Y][X][check]:
                         visited[Y][X][check] = k + 1 - bonus
@@ -54,5 +54,11 @@ for tc in range(1, T+1):
                     if k + 1 - bonus < visited[Y][X][check]:
                         visited[Y][X][check] = k + 1 - bonus
                         q.append([Y, X, check, k+1 - bonus, 0, step+1])
-
-    print(result)
+    for y in range(N):
+        for x in range(N):
+            print(visited[y][x][0], end=' ')
+        print()
+    if result != 999999:
+        print('#{} {}'.format(tc, result))
+    else:
+        print('#{} -1'.format(tc))
