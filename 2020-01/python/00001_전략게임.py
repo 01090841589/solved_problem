@@ -68,3 +68,5 @@ for tc in range(1, T+1):
         print('#{} {}'.format(tc, result))
     else:
         print('#{} -1'.format(tc))
+
+#돌아올때
