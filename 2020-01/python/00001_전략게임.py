@@ -42,7 +42,7 @@ for tc in range(1, T+1):
                             visited[0][0][check] = k + 1 - bonus
                         q.append([0, 0, check, k+1 - bonus, 0, 1])
                 elif CodeActive[check] == 2 and step >= 3:
-                    check = 0
+                    check = MAP[(N//2)-1][(N//2)-1]
                     if k + 1 - bonus < visited[(N//2)-1][(N//2)-1][check]:
                         if step >= 3:
                             visited[(N // 2) - 1][(N // 2) - 1][check] = k + 1 - bonus

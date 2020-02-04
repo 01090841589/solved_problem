@@ -14,13 +14,14 @@ def go_dao(y, x, k, route):
             Y = y+DIR[i][0]
             X = x+DIR[i][1]
             if 0 <= Y < H and 0 <= X < W:
-                if MAP[Y][X] == 'Z':
-                    rts = route+arr[i]
-                    result = 1
+                if MAP[Y][X] != '@':
+                    if MAP[Y][X] == 'Z':
+                        rts = route+arr[i]
+                        result = 1
 
-                    return
-                flag = 0
-                go_dao(Y, X, k+1, route+arr[i])
+                        return
+                    flag = 0
+                    go_dao(Y, X, k+1, route+arr[i])
     if flag:
         pass
 
