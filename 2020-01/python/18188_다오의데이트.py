@@ -2,6 +2,8 @@ import sys
 sys.stdin = open("다오의데이트.txt")
 
 DIR = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+
+
 def go_dao(y, x, k, route):
     global result, rts
     if result:
@@ -24,7 +26,6 @@ def go_dao(y, x, k, route):
                     go_dao(Y, X, k+1, route+arr[i])
     if flag:
         pass
-
 
 
 H, W = map(int, input().split())
