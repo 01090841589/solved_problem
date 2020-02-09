@@ -20,7 +20,6 @@ def go_dao(y, x, k, route):
                     if MAP[Y][X] == 'Z':
                         rts = route+arr[i]
                         result = 1
-
                         return
                     flag = 0
                     go_dao(Y, X, k+1, route+arr[i])
