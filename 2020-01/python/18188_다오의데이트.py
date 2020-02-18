@@ -23,9 +23,6 @@ def go_dao(y, x, k, route):
                         return
                     flag = 0
                     go_dao(Y, X, k+1, route+arr[i])
-    if flag:
-        pass
-
 
 H, W = map(int, input().split())
 MAP = [list(input()) for _ in range(H)]
