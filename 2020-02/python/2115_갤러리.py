@@ -7,5 +7,4 @@ for y in range(N):
     for x in range(M):
         if MAP[y][x] == 'X':
             print(1)
-
         pass
