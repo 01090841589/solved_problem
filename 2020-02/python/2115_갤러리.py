@@ -69,4 +69,5 @@ for x in range(1, M):
                     flag = 1
         else:
             flag = 1
+
 print(res)
