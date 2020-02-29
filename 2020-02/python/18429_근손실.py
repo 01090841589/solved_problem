@@ -1,6 +1,7 @@
 import sys
 sys.stdin = open("근손실.TXT")
 
+
 from itertools import permutations
 
 
