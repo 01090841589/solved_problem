@@ -5,6 +5,7 @@ N, M = map(int, input().split())
 MAP = [list(input()) for _ in range(N)]
 res = 0
 flag = 1
+
 for y in range(N - 1):
     for x in range(M):
         if MAP[y][x] == 'X':
@@ -21,6 +22,7 @@ for y in range(N - 1):
                     flag = 1
         else:
             flag = 1
+
 for y in range(1, N):
     for x in range(M):
         if MAP[y][x] == 'X':
@@ -37,6 +39,7 @@ for y in range(1, N):
                     flag = 1
         else:
             flag = 1
+
 for x in range(M - 1):
     for y in range(N):
         if MAP[y][x] == 'X':
@@ -53,6 +56,7 @@ for x in range(M - 1):
                     flag = 1
         else:
             flag = 1
+
 for x in range(1, M):
     for y in range(N):
         if MAP[y][x] == 'X':
