@@ -7,6 +7,7 @@ from collections import deque
 
 DIR = [[0, 1], [1, 0], [0, -1], [-1, 0]]
 
+
 def wall_break():
     global res
     MAP_NOW = copy.deepcopy(MAP)
@@ -28,7 +29,6 @@ def wall_break():
                                     q.append([Y_set, X_set])
                             else:
                                 break
-
                 for XX in range(W):
                     buf = []
                     for YY in range(H-1, -1, -1):
@@ -47,9 +47,9 @@ def wall_break():
                 cnt += 1
     if res > cnt:
         res = cnt
-
     if res == 0:
         return
+
 
 def shoot_site(k):
     global res
@@ -61,8 +61,6 @@ def shoot_site(k):
     for i in range(W):
         code[k] = i
         shoot_site(k+1)
-
-
 
 
 T = int(input())
