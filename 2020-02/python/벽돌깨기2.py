@@ -29,6 +29,7 @@ def wall_break():
                                     q.append([Y_set, X_set])
                             else:
                                 break
+
                 for XX in range(W):
                     buf = []
                     for YY in range(H-1, -1, -1):
