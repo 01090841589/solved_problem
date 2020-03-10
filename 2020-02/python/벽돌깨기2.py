@@ -29,7 +29,6 @@ def wall_break():
                                     q.append([Y_set, X_set])
                             else:
                                 break
-
                 for XX in range(W):
                     buf = []
                     for YY in range(H-1, -1, -1):
@@ -40,7 +39,6 @@ def wall_break():
                     for i in range(len(buf), H):
                         MAP_NOW[H-1-i][XX] = 0
                 break
-
     cnt = 0
     for y in range(H):
         for x in range(W):
