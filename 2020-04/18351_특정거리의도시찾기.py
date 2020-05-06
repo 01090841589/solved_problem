@@ -3,6 +3,7 @@ sys.stdin = open("특정거리.txt")
 
 from collections import deque
 
+
 N, M, K, X = map(int, input().split())
 visited = [300001]*(N)
 MAP = [[] for _ in range(N)]
