@@ -24,6 +24,7 @@ for turn in range(1, 2):
     now_spread = spread[:]
     spreads = []
     next_spread = []
+
     for i in range(len(now_spread)):
         num = now_spread[i]
         if not MAP[num]:
@@ -41,19 +42,7 @@ for turn in range(1, 2):
                 print('bel', belis)
                 if (len(MAP[j])+1)%2 >= belis:
                     spreads.append(j)
-
             else:
                 pass
         
     next_spread = []
-
-# 7
-# 2 3 0
-# 1 3 0
-# 1 2 4 0
-# 3 5 0
-# 4 0
-# 0
-# 0
-# 2
-# 1 6
