@@ -1,0 +1,15 @@
+confirmation-view {
+    match: core.Confirmation {
+    confirming: Mode_select(action) 
+    }
+    
+  message{
+    if(action.mode.color == 'true'){
+      template ("색맹검사를 선택하셨습니다..")
+    }
+  }
+
+
+    mode (Transactional) 
+
+}

@@ -1,0 +1,6 @@
+structure (ModeInfo) {
+  description (모드 고르기)
+  property (mode) {
+    type (Mode)
+  }
+}

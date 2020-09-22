@@ -1,0 +1,48 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (Start_mode) {
+        accepted-inputs (modeinfo)
+        local-endpoint (Start_mode.js)
+      }
+      action-endpoint (Mode_select) {
+        accepted-inputs (mode)
+        local-endpoint (Mode_select.js)
+      }
+  
+    action-endpoint (ColorTest) {
+      accepted-inputs (modeName, colorArray)
+      local-endpoint (Colortest.js)
+    }
+    action-endpoint (ColorCal) {
+      accepted-inputs (colorTestStart, colorInput)
+      local-endpoint (ColorCal.js)
+    }
+    action-endpoint (ColorFind) {
+      accepted-inputs (firstInput)
+      local-endpoint (ColorFind.js)
+    }
+  }
+}
+  
+
+// endpoints {
+//   action-endpoints {
+//     action-endpoint (FindQuiz) {
+//       accepted-inputs (searchTerm)
+//       local-endpoint (FindQuiz.js)
+//     }
+//     action-endpoint (StartQuiz) {
+//       accepted-inputs (quiz)
+//       local-endpoint (StartQuiz.js)
+//     }
+//     action-endpoint (UpdateQuiz) {
+//       accepted-inputs (quiz, answer)
+//       local-endpoint (UpdateQuiz.js)
+//     }
+//     action-endpoint (ExtractAnswerFromOption) {
+//       accepted-inputs (option)
+//       local-endpoint (ExtractAnswerFromOption.js)
+//     }
+//   }
+// }
+

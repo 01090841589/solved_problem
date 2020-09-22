@@ -1,0 +1,3 @@
+integer (ColorInput) {
+  description (__DESCRIPTION__)
+}

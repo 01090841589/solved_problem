@@ -1,0 +1,76 @@
+action (Start_mode) {
+  type(Search)
+  description (ㅡㅡ)
+  collect {
+    input (modeinfo) {  
+      type (ModeInfo)
+      min (Required) max (One)
+      default-init {
+        intent {
+          goal: Mode_select
+        }
+      }
+      validate{
+        if (modeinfo.mode.color && modeinfo.mode.sight){   
+          replan{
+            // dialog{
+            //   template-macro (chooseOneMode)
+            // }
+            intent{
+              goal: Mode_select
+            }
+          }
+        }
+        if (modeinfo.mode.farsight && modeinfo.mode.sight){ 
+          replan{
+            intent{
+              goal: Mode_select
+            }
+          }
+        }
+        if (modeinfo.mode.color && modeinfo.mode.farsight){  
+          replan{
+            intent{
+              goal: Mode_select
+            }
+          }
+        }
+        
+        if(!modeinfo.mode.color && !modeinfo.mode.sight && !modeinfo.mode.farsight){
+          replan{
+            intent{
+              goal: Mode_select
+            }
+          }
+        }
+
+
+
+      }
+    }
+  }
+
+  output (ModeName){
+    throws{
+      error (NoResult){
+          on-catch {
+            halt {
+              dialog {
+                template-macro (chooseOneMode)
+              }
+            }
+          }
+        }
+        unknown-error{
+          on-catch {
+            halt {
+              dialog {
+                template-macro (unknownError)
+              }
+            }
+          }
+        }
+      }
+    
+  }
+}

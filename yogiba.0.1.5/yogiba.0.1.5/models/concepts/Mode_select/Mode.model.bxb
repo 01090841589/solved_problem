@@ -1,0 +1,16 @@
+structure (Mode) {
+  description (모드 종류)
+  property (color) {
+    type (Color)
+    min (Required)
+  }
+  property (sight){
+    type (Sight)
+    min (Required)
+  }
+  property (farsight){
+    type (Farsight)
+    min (Required)
+  }
+  
+}

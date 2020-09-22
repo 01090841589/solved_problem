@@ -1,0 +1,14 @@
+capsule-info {
+  display-name (요기바)
+  developer-name (SSAFY_Gumi_2_1)
+  icon-asset (/bixby_launcher.png)
+  description ("눈 검사 캡슐")
+  website-url (https://example.com/)
+  terms-url (https://example.com/terms-of-use/)
+  dispatch-name (요기바)
+  search-keywords{
+    keyword (tips)
+    keyword (건강)
+    keyword (health)
+  }
+}

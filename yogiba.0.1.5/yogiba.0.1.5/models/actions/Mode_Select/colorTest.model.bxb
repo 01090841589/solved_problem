@@ -1,0 +1,40 @@
+action (ColorTest) {
+  description (색맹)
+  type(Search)
+  collect { // 예) 3[leftOperand] 더하기[opertor] 4[rightOperand]는 뭐야?
+    input (modeName) { // 예) String[LeftOperand] str[leftOperand] = new String();[LeftOperand]
+      type (ModeName)
+      min (Required) max (One)
+
+      default-init {
+        intent {
+          goal: Start_mode
+        }
+      }
+    }
+    input(colorArray){
+      type(ColorArray)
+      min (Optional) max (One)
+
+      default-init{
+        intent{
+          goal: ColorCal
+        }
+      }
+    }
+  }
+  
+  output (ColorTestStart){
+    throws{
+      unknown-error{
+        on-catch {
+          halt {
+            dialog {
+              template ("문제가 생겼네요. 다시 한번 말씀해주세요.")
+            }
+          }
+        }
+      }
+    }
+  }
+}

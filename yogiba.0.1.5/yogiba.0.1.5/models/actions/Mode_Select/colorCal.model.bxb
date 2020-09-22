@@ -1,0 +1,20 @@
+action (ColorCal) {
+  type (Constructor)
+  description (값 저장 확인)
+  collect {
+    input (colorTestStart) {
+      type (ColorTestStart)
+      min (Optional) max (One)
+        // default-init{
+        //   intent{
+        //     goal: ColorFind
+        //   }
+        // }
+    }
+    input (colorInput){
+      type (ColorInput)
+      min (Optional) max (One)
+    }
+  }
+  output (ColorArray)
+}

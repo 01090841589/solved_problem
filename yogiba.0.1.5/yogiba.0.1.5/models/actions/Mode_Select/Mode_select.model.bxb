@@ -1,0 +1,31 @@
+action (Mode_select) {
+  description (모드 고르기)
+  type(Search)
+  collect {
+    input (mode) { 
+      type (Mode) //Mode.bxb에 있는 기능들을 불러옴
+      min (Optional) max (One)
+      prompt-behavior (AlwaysSelection) // 원하는 기능 하나 선택
+
+
+      // validate{
+      //   if(mode.color){
+      //     replan{
+      //       intent{
+      //         value: FfnumName(색맹)
+      //         goal: ColorTest
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+  output (ModeInfo){ 
+    evaluate{ //따로 js를 쓰지않고 바로 계산
+      ModeInfo{
+        mode: $expr(mode) // 고른 기능 하나를 보냄
+      }
+    }
+  }
+}
+

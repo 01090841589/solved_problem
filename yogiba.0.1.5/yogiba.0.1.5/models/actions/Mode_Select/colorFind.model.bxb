@@ -1,0 +1,11 @@
+action (ColorFind) {
+  description (확인용)
+  type (Search)
+  collect {
+    input (firstInput) {
+      type (FirstInput)
+      min (Optional) max (One)
+    }
+  }
+  output (ColorArray)
+}

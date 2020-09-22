@@ -1,0 +1,17 @@
+structure (ColorTestStart) {
+  property (modeName){
+    type (ModeName)
+    min (Required) max (One)
+  }
+  
+  property (colorOutput){
+    type (ColorOutput)
+    min (Required) max (One)
+  }
+  
+  property (colorArray) {
+    type (ColorArray)
+    min (Optional) max (One)
+  }
+  
+}

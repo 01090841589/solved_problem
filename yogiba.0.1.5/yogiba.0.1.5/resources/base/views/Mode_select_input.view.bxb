@@ -1,0 +1,52 @@
+// input 화면에 대한 보여주는 방식을 설정(https://bixbydevelopers.com/dev/docs/reference/type/input-view)
+input-view {
+  // 입력 화면을 보여주고 싶은 input concept을 지정
+  match: Mode(this)
+
+  message {
+    // input을 받을 시에 보여줄 dialog를 설정
+    template-macro (chooseModeInput)
+  }
+
+  render {
+    // 어떻게 화면을 그릴 것인가에 대하여 설정
+    form {
+      // form UI (https://bixbydevelopers.com/dev/docs/reference/type/input-view.render.form)
+      elements {
+        checkbox {
+          id (checkSight)
+          type (Sight)
+          primary-text (시력 테스트)
+          secondary-text (시력 테스트를 시작합니다.)
+          value ("시력")
+        }
+        checkbox {
+          id (checkColor)
+          type (Color)
+          primary-text (색맹 테스트)
+          secondary-text (색맹테스트를 시작합니다.)
+          value ("색맹")
+        }
+        
+        checkbox {
+          id (checkFarsight)
+          type (Farsight)
+          primary-text (난시 테스트)
+          secondary-text (난시테스트를 시작합니다.)
+          value ("난시")
+        }
+      }
+
+      on-submit {
+
+        goal: Mode
+        value: Mode{
+          color: viv.core.FormElement(checkColor)
+          sight: viv.core.FormElement(checkSight)
+          farsight: viv.core.FormElement(checkFarsight)
+        }
+      }
+      
+    }
+  }
+}

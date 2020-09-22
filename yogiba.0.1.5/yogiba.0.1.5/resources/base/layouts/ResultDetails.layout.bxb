@@ -1,0 +1,75 @@
+layout-macro-def (result_details) {
+	params {
+		param (info) {
+			type (ColorTestStart)
+			min (Optional) max (Many)
+		}
+	}
+	content {
+		
+		// section{
+		//   title{
+		//     template ("#{value(info.ffnumName)} 테스트 시작")
+		//   }
+		// content{
+		
+		if (info.modeName == '색맹'){
+			if (info.colorArray.color_Stat <= 9){
+				image-card {
+					aspect-ratio (1:1)
+					title-area {
+						halign (Start)
+						slot1 {
+							text {
+								value ("보이는 숫자를 읽어주세요.")
+								style (Title_M)
+							}
+						}
+					}
+					image-url("/img/#{value(info.colorOutput)}.jpg")
+				}
+			}
+			else{
+				image-card {
+					aspect-ratio (1:1)
+					title-area {
+						halign (Start)
+						slot1 {
+							text {
+								value ("결과를 계산하는 중입니다..")
+								style (Title_M)
+							}
+						}
+					}
+					image-url("/img/111.jpg")
+				}
+			
+			}
+		}
+		else-if (info.modeName == '난시'){
+			image-card {
+				aspect-ratio (1:1)
+				title-area {
+					halign (Start)
+					slot1 {
+						text {
+							value ("저를 봐주세요")
+							style (Title_M)
+						}
+					}
+				}
+				image-url("/img/111.jpg") //  경로에 한글을 인식못해 삼성껀데...
+			}
+			
+		}
+	}
+	// }
+	// }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+enum (Sightscore) {
+  description (모드를 부르기 위한 concept)
+  symbol (색맹 검사)
+  symbol (시력 검사)
+  symbol (난시 검사)
+}

@@ -1,0 +1,68 @@
+structure (ColorArray) {
+  description (나왔던 것들)
+  property (color_One) {
+    type (Color_One)
+    min (Optional) max (One)
+  }
+  property (color_Two) {
+    type (Color_Two)
+    min (Optional) max (One)
+  }
+  property (color_Three) {
+    type (Color_Three)
+    min (Optional) max (One)
+  }
+  property (color_Four) {
+    type (Color_Four)
+    min (Optional) max (One)
+  }
+  property (color_Five) {
+    type (Color_Five)
+    min (Optional) max (One)
+  }
+  property (color_Six) {
+    type (Color_Six)
+    min (Optional) max (One)
+  }
+  property (color_Seven) {
+    type (Color_Seven)
+    min (Optional) max (One)
+  }
+  property (color_Eight) {
+    type (Color_Eight)
+    min (Optional) max (One)
+  }
+  property (color_Nine) {
+    type (Color_Nine)
+    min (Optional) max (One)
+  }
+  property (color_Ten) {
+    type (Color_Ten)
+    min (Optional) max (One)
+  }
+  property (color_Stat) {
+    type (Color_Stat)
+    min (Optional) max (One)
+  }
+  property (aCBlind) {
+    type (ACBlind)
+    min (Optional) max (One)
+  }
+  property (aCWeak) {
+    type (ACWeak)
+    min (Optional) max (One)
+  }
+  property (normals) {
+    type (Normals)
+    min (Optional) max (One)
+  }
+  property (rGBlind) {
+    type (RGBlind)
+    min (Optional) max (One)
+  }
+  property (rGWeak) {
+    type (RGWeak)
+    min (Optional) max (One)
+  }
+
+}
