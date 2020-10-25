@@ -13,19 +13,8 @@ def solution(a, b, c):
             price //= 2
             if price == 12:
                 break
-    scr = scr * 100 / (i+1)
-    scr = round(scr, 0)
-    if str(scr) == '0.0':
-        answer = '0.00'
-    elif scr < 10:
-        scr = str(scr)
-        answer = '0'+'.'+'0'+scr[-3:-2]
-    elif scr < 100:
-        scr = str(scr)
-        answer = '0'+'.'+scr[-4:-2]
-    else:
-        scr = str(scr)
-        answer = scr[:-4]+'.'+scr[-4:-2]
+    scr = scr / (i+1)
+    answer = format(scr, ".2f")
 
     return answer
 
