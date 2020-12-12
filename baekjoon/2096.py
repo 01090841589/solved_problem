@@ -14,6 +14,10 @@ for y in range(N):
         visitedmax = inp[:]
         visitedmin = inp[:]
         continue
+
+    for i in range(3):
+
+
     bufmax[0] = inp[0] + max(visitedmax[0], visitedmax[1])
     bufmax[1] = inp[1] + max(visitedmax[0], visitedmax[1], visitedmax[2])
     bufmax[2] = inp[2] + max(visitedmax[2], visitedmax[1])
