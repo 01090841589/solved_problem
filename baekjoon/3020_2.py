@@ -46,6 +46,7 @@ for i in range(H):
         for j in range(i,H):
             cnt[j] = N//2
         break
+
 ans = 0
 min_cnt = min(cnt)
 for i in range(H):
