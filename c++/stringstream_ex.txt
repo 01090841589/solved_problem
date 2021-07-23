@@ -1,0 +1,16 @@
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int main() {
+    long long a, b, c, d;
+    
+    cin >> a >> b >> c;
+    d = a*b*c;
+    cout << d << endl;
+    
+    stringstream ssint;
+    ssint << d;
+    cout << ssint.str() << endl;
+	return 0;		
+}
