@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+float grade[1002];
+float change_grade = 0;
+int a;
+int low = 0;
+int main() {
+    
+    cin >> a;
+    
+    for (int i = 0; i < a; i++){
+        cin >> grade[i];
+        if (low < grade[i]){
+            low = grade[i];
+        }
+        
+    }
+    
+    for (int i = 0; i < a; i++){
+        change_grade += grade[i]/low*100;
+        
+    }
+    cout.precision(6);
+    cout << change_grade/a << endl;
+    
+	return 0;
+}
